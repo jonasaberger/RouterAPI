@@ -5,23 +5,20 @@ import Contact from "./Contact";
 const Layout = (props) => {
 
     return (
-        <div>
-            <h1>Navigation Bar</h1>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="contact" element={<Contact></Contact>}>Contact</Link>
-                </li>
-            </ul>
-
-
-            <div className="BodyContainer">
-                <Outlet></Outlet>
-            </div>
-        </div>
-
+        <>
+            <nav className="NavigationContainer">
+                <h1 className="NavigationTitle">Navigation Bar</h1>
+                <ul>
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link to="contact" element={<Contact></Contact>}>Contact</Link>
+                    </li>
+                </ul>
+            </nav>
+            <Outlet></Outlet>
+        </>
     )
 
 }

@@ -1,3 +1,4 @@
+/* React-App Styling */
 .App {
   text-align: center;
 }
@@ -35,4 +36,44 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* App.jsx Styling / Main Styling */
+.MainContainer {
+  display:flex;
+}
+
+
+/* Layout.jsx Styling */
+.NavigationContainer {
+  display:flex;
+  flex-direction:column;
+  background-color:green;
+}
+
+.NavigationTitle {
+
+}
+
+
+/* Home.jsx Styling */
+.HomeContainer {
+  background-color: blue;
+  flex-grow: 1;
+}
+
+/* Contact.jsx Styling */
+.ContactContainer {
+  background-color:red;
+  flex-grow: 1;
+}
+
+
+/* Weather.jsx Styling */
+.WeatherContainer {
+  background-color:gray;
+}
+
+.WeatherTitle {
+
 }

@@ -1,6 +1,9 @@
 const Contact = () => {
     return (
-        <h1>Contact</h1>
+        <div className="ContactContainer">
+            <h1>Contact</h1>
+        </div>
+        
     )
 }
 export default Contact;
