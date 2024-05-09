@@ -3,10 +3,6 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -23,6 +19,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+
 }
 
 .App-link {
@@ -41,6 +38,10 @@
 /* App.jsx Styling / Main Styling */
 .MainContainer {
   display:flex;
+  flex-shrink: 0;
+  height:100%;
+  flex-grow: 1;
+
 }
 
 
@@ -76,4 +77,10 @@
 
 .WeatherTitle {
 
+}
+
+/* Spotify.jsx Styling */
+.SpotifyContainer {
+  background-color:lightgreen;
+  flex-grow: 1;
 }
