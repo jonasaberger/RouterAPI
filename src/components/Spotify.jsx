@@ -1,12 +1,8 @@
 const Spotify = () => {
-    //let promise = getSpotifyData("artist","Burzum")
-
-
     return (
         <div className="SpotifyContainer">
 
-        </div>
-        
+        </div> 
     )
 }
 export default Spotify;
