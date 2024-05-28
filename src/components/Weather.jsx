@@ -1,12 +1,19 @@
 import { useState } from "react";
 import getLocation from "../services/getLocation";
 import getWeather from "../services/getWeather";
+import rainImage from "../assets/Rain.png"
+import clearImage from "../assets/Sunny.png"
+import stormImage from "../assets/Storm.png"
+import cloudImage from "../assets/Clouds.png"
+import getWeatherIcon from "../services/getWeatherIcon";
 
 const Weather = (props) => {
-
     const [position,setPosition] = useState(["-","-"])
     const [weatherData,setWeatherData] = useState(null)
+    const [weatherImage,setWeatherImage] = useState(null)
+
     const api_key = "ff405c12ed1acb3a636d642065628df0";
+
 
     const handleClick = () => {
         getLocation()
@@ -15,8 +22,30 @@ const Weather = (props) => {
                 getWeather(position[0],position[1], api_key)
                 .then(data => {
                     if(data) {
+                        // Success
+
+                        // Setting the Weather Data
                         setWeatherData(data)
-                        console.log("HURRAAA")
+                        
+                        getWeatherIcon(data.weather[0].icon)
+                        .then (weatherIcon => {
+                            setWeatherImage(weatherIcon.url)
+                        })
+
+                        // Get the appropriate Weather-Image
+                        if(data.weather[0].main === "Clear") {
+                            setWeatherImage(clearImage)
+                        }
+                        else if(data.weather[0].main === 'Clouds') {
+                            setWeatherImage(cloudImage)
+                        }
+                        else if(data.weather[0].main === 'Rain') {
+                            setWeatherImage(rainImage)
+                        }
+                        else if(data.weather[0].main === 'Storm') {
+                            setWeatherImage(stormImage)
+                        }
+                        console.log(data)
                     }
                     else {
                         console.log("ERROR getting Weather")
@@ -32,18 +61,21 @@ const Weather = (props) => {
             });
     }
 
+
+
     return (
         <div className="WeatherContainer">
             <h2 className="WeatherTitle">Weather-Display</h2>
-            
+
             {weatherData && (
                 <>
+                    <img src={weatherImage} alt="Weather" />
+                
                     <div>{((weatherData.main.temp)-273.15).toFixed(2)}°</div>
                     <div>{weatherData.name}</div>
                 </>
             )}
             <button onClick={handleClick}>Refresh</button>
-        
         </div>
     )
         

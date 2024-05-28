@@ -1,7 +1,11 @@
 /* React-App Styling */
-.App {
+
+html, body, #root, .App {
+  height: 100%;
+  width: 100%;
   text-align: center;
 }
+
 
 
 @media (prefers-reduced-motion: no-preference) {
@@ -10,17 +14,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-
-}
 
 .App-link {
   color: #61dafb;
@@ -38,10 +31,9 @@
 /* App.jsx Styling / Main Styling */
 .MainContainer {
   display:flex;
-  flex-shrink: 0;
-  height:100%;
-  flex-grow: 1;
-
+  height: 100%;
+  width: 100%;
+  
 }
 
 
