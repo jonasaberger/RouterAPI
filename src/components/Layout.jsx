@@ -8,7 +8,7 @@ const Layout = (props) => {
     return (
         <>
             <nav className="NavigationContainer">
-                <h1 className="NavigationTitle">Navigation Bar</h1>
+                <h2 className="NavigationTitle">Navigation Bar</h2>
                 <ul>
                     <li>
                         <Link to="/">Home</Link>

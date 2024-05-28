@@ -33,7 +33,6 @@ html, body, #root, .App {
   display:flex;
   height: 100%;
   width: 100%;
-  
 }
 
 
@@ -42,6 +41,7 @@ html, body, #root, .App {
   display:flex;
   flex-direction:column;
   background-color:green;
+  min-width: 200pt;
 }
 
 .NavigationTitle {
@@ -65,14 +65,23 @@ html, body, #root, .App {
 /* Weather.jsx Styling */
 .WeatherContainer {
   background-color:gray;
+  min-width: 230pt;
 }
 
 .WeatherTitle {
 
 }
 
+.WeatherButton {
+  margin-top: 10pt;
+}
+
 /* Spotify.jsx Styling */
 .SpotifyContainer {
   background-color:lightgreen;
-  flex-grow: 1;
+  flex-grow: 1
+}
+
+.SpotifyTitle {
+
 }

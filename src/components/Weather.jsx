@@ -6,6 +6,8 @@ import clearImage from "../assets/Sunny.png"
 import stormImage from "../assets/Storm.png"
 import cloudImage from "../assets/Clouds.png"
 import getWeatherIcon from "../services/getWeatherIcon";
+import Button from 'react-bootstrap/Button'
+
 
 const Weather = (props) => {
     const [position,setPosition] = useState(["-","-"])
@@ -32,19 +34,6 @@ const Weather = (props) => {
                             setWeatherImage(weatherIcon.url)
                         })
 
-                        // Get the appropriate Weather-Image
-                        if(data.weather[0].main === "Clear") {
-                            setWeatherImage(clearImage)
-                        }
-                        else if(data.weather[0].main === 'Clouds') {
-                            setWeatherImage(cloudImage)
-                        }
-                        else if(data.weather[0].main === 'Rain') {
-                            setWeatherImage(rainImage)
-                        }
-                        else if(data.weather[0].main === 'Storm') {
-                            setWeatherImage(stormImage)
-                        }
                         console.log(data)
                     }
                     else {
@@ -71,14 +60,19 @@ const Weather = (props) => {
                 <>
                     <img src={weatherImage} alt="Weather" />
                 
-                    <div>{((weatherData.main.temp)-273.15).toFixed(2)}°</div>
-                    <div>{weatherData.name}</div>
+                    <b>{((weatherData.main.temp)-273.15).toFixed(2)}°</b> <br />
+                    <b>{weatherData.name}</b> <br />
                 </>
             )}
-            <button onClick={handleClick}>Refresh</button>
+            {!weatherData && (
+                <>
+                    <b>Weather couldn't be loaded...</b><br />
+                    <b>Check your browsers privacy settings</b><br />
+                </>
+            )}
+            
+            <Button className="WeatherButton" variant="dark" onClick={handleClick}>Refresh</Button>{' '}
         </div>
     )
-        
-    
 }
 export default Weather;

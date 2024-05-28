@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
@@ -5,6 +6,7 @@ import Home from './components/Home';
 import Contact from './components/Contact';
 import Weather from './components/Weather';
 import Spotify from './components/Spotify';
+
 
 function App() {
   return (
