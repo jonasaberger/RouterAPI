@@ -1,10 +1,6 @@
 import { useState } from "react";
 import getLocation from "../services/getLocation";
 import getWeather from "../services/getWeather";
-import rainImage from "../assets/Rain.png"
-import clearImage from "../assets/Sunny.png"
-import stormImage from "../assets/Storm.png"
-import cloudImage from "../assets/Clouds.png"
 import getWeatherIcon from "../services/getWeatherIcon";
 import Button from 'react-bootstrap/Button'
 
@@ -49,7 +45,6 @@ const Weather = (props) => {
                 setPosition(["-", "-"]); // Set position to default values or handle error state
             });
     }
-
 
 
     return (
