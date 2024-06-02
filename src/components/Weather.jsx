@@ -68,8 +68,9 @@ const Weather = (props) => {
             )}
             {!weatherData && (
                 <>
-                    <b>Weather couldn't be loaded...</b><br />
-                    <b>Check your browsers privacy settings</b><br />
+                    <b>Weather couldn't be loaded...</b>
+                    <b>Check your browsers privacy settings</b>
+                    <b>And then click 'Refresh' again</b><br />
                 </>
             )}
             

@@ -34,49 +34,60 @@
 /* Layout.jsx Styling */
 .NavigationContainer {
   display:flex;
-  align-content: center;
   flex-direction:column;
-  background-color:green;
+  background-color:lightsalmon;
   min-width: 230pt;
 
   border-radius: 10pt;
   margin:8pt;
 }
 
+.NavigationTitle {
+  align-self: center;
+}
+
 
 
 /* Home.jsx Styling */
-.HomeContainer {
+.HomeContainer{
   display: flex;
-  background-color: blue;
+  background-color: lightblue;
+  flex-direction: column;
   flex-grow: 1;
   flex-shrink: 0;
-  justify-content: center;
 
   border-radius: 10pt;
   margin:8pt;
 }
-
-
+.HomeContainer h1, b {
+  align-self: center;
+}
+.HomeContainer p {
+  align-self: flex-start;
+  margin:10pt;
+}
 
 
 /* Weather.jsx Styling */
 .WeatherContainer-Message {
   display:flex;
   flex-direction: column;
-  background-color:gray;
+  background-color:red;
   min-width: 230pt;
   flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
   
 
   border-radius: 10pt;
   margin:8pt;
+  padding-bottom:5pt;
 }
 
 .WeatherContainer-Display {
   display:flex;
   flex-direction: column;
-  background-color:gray;
+  background-color:lightgray;
   min-width: 230pt;
   flex-shrink: 0;
   justify-content: center;
@@ -115,13 +126,14 @@
 }
 
 .SpotifyDataContainer {
-  background-color: darkgrey;
   display:flex;
+  background-color: #61dafb;
   flex-direction: column;
   align-items: center;
   margin:8pt;
   border-radius: 5pt;
-  padding-top:10pt
+  padding-top:10pt;
+  
 }
 
 .SpotifyForm {
