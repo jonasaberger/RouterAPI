@@ -9,6 +9,7 @@ const Weather = (props) => {
     const [position,setPosition] = useState(["-","-"])
     const [weatherData,setWeatherData] = useState(null)
     const [weatherImage,setWeatherImage] = useState(null)
+    const [updateContainer,setUpdateContainer] = useState(false)
 
     const api_key = "ff405c12ed1acb3a636d642065628df0";
 
@@ -22,6 +23,10 @@ const Weather = (props) => {
                     if(data) {
                         // Success
 
+                        // Update the Style
+                        setUpdateContainer(true)
+                        
+
                         // Setting the Weather Data
                         setWeatherData(data)
                         
@@ -29,6 +34,8 @@ const Weather = (props) => {
                         .then (weatherIcon => {
                             setWeatherImage(weatherIcon.url)
                         })
+
+                        
 
                         console.log(data)
                     }
@@ -48,7 +55,7 @@ const Weather = (props) => {
 
 
     return (
-        <div className="WeatherContainer">
+        <div className={`WeatherContainer-${updateContainer ? 'Display' : 'Message'}`}>
             <h2 className="WeatherTitle">Weather-Display</h2>
 
             {weatherData && (

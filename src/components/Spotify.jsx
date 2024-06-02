@@ -105,17 +105,20 @@ const fetchData = async () => {
       setOutputData(
         <>
             <b>Total Results:: {trackData.total}</b>
-            <div>{(trackData.items).map((track) => (
-                <>
-                <h5>
-                    <Button
-                    variant="dark"
-                    onClick={openLink(track.external_urls.spotify)}
-                    disabled={checkedIndex === null || searchInput === ''}> </Button> {track.name} : {formatMsToMinutes(track.duration_ms)}</h5>
-                    <div>{(track.artists).map((artist) => (
-                        <p>- {artist.name}</p>
-                    ))}</div>
-                </>
+            <div className="SpotifyTracks">{(trackData.items).map((track) => (
+                <div className="SpotifyTrack">
+                  <h5>
+                      <Button
+                      variant="dark"
+                      onClick={openLink(track.external_urls.spotify)}
+                      disabled={checkedIndex === null || searchInput === ''}> </Button> {track.name} : {formatMsToMinutes(track.duration_ms)}
+                  </h5>
+                  <div>{(track.artists).map((artist) => (
+                    <>
+                      <b>- {artist.name}</b><br />
+                    </>
+                  ))}</div>
+                </div>
             ))}</div>
         </>
       );
@@ -193,12 +196,13 @@ const fetchData = async () => {
 };
   return (
     <div className="SpotifyContainer">
-      <h2 className="SpotifyTitle">Spotify</h2>
-      <Form>
+      <h1 className="SpotifyTitle">Spotify</h1>
+      <Form className="SpotifyForm">
         <Form.Group controlId="searchInput">
           <Form.Control
             type="text"
             placeholder="Enter search input"
+            className="SpotifySearchBar"
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
           />
@@ -208,6 +212,7 @@ const fetchData = async () => {
             <Form.Check
                 key={index}
                 type="checkbox"
+                className="SpotifyCheckbox"
                 label={label}
                 checked={checkedIndex === index}
                 onChange={() => handleCheckboxChange(index)}
@@ -215,19 +220,23 @@ const fetchData = async () => {
             
             ))}
         </Form.Group>
-      </Form>
-      <Button
+        <Button
         variant="dark"
+        className="SpotifySearchButton"
+        type="sumbit"
         onClick={searchButton}
         disabled={checkedIndex === null || searchInput === ''}
       >
         Search
       </Button>
+      </Form>
+      
       {outputData && <div className="SpotifyDataContainer">{outputData}</div>}
       <Button
         variant="light"
+        className="SpotifyWrongButton"
         onClick={wrongButton}
-        disabled={outputData === null || refreshCounter >= 20}
+        disabled={outputData === null || refreshCounter >= 20 || checkedIndex == 2}
       >
         Wrong One?
       </Button>

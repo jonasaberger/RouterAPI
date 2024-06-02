@@ -34,54 +34,78 @@
 /* Layout.jsx Styling */
 .NavigationContainer {
   display:flex;
+  align-content: center;
   flex-direction:column;
   background-color:green;
-  min-width: 200pt;
+  min-width: 230pt;
+
+  border-radius: 10pt;
+  margin:8pt;
 }
 
-.NavigationTitle {
-
-}
 
 
 /* Home.jsx Styling */
 .HomeContainer {
+  display: flex;
   background-color: blue;
   flex-grow: 1;
   flex-shrink: 0;
+  justify-content: center;
+
+  border-radius: 10pt;
+  margin:8pt;
 }
 
-/* Contact.jsx Styling */
-.ContactContainer {
-  background-color:red;
-  flex-grow: 1;
-  flex-shrink: 0;
-}
+
 
 
 /* Weather.jsx Styling */
-.WeatherContainer {
+.WeatherContainer-Message {
+  display:flex;
+  flex-direction: column;
   background-color:gray;
   min-width: 230pt;
   flex-shrink: 0;
+  
+
+  border-radius: 10pt;
+  margin:8pt;
+}
+
+.WeatherContainer-Display {
+  display:flex;
+  flex-direction: column;
+  background-color:gray;
+  min-width: 230pt;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  
+
+  border-radius: 10pt;
+  margin:8pt;
+  padding-bottom:5pt;
 }
 
 .WeatherTitle {
-
+  align-self: center;
 }
 
 .WeatherButton {
-  margin-top: 10pt;
+  
 }
 
 /* Spotify.jsx Styling */
 .SpotifyContainer {
   display:flex;
   background-color:lightgreen;
-  justify-content: center;
   flex-direction: column;
   flex-grow: 1;
   flex-shrink: 0;
+
+  border-radius: 10pt;
+  margin:8pt;
   
 }
 
@@ -90,33 +114,47 @@
 
 }
 
-.SpotifyCheckboxContainer {
-
-}
-
 .SpotifyDataContainer {
-  background-color: pink;
+  background-color: darkgrey;
   display:flex;
   flex-direction: column;
   align-items: center;
+  margin:8pt;
+  border-radius: 5pt;
+  padding-top:10pt
 }
 
-.ArtistName {
+.SpotifyForm {
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.SpotifyCheckboxContainer {
+  display:flex;
+  justify-content: space-evenly;
+  margin-bottom: 10pt;
 
 }
 
-.FollowerCount {
-
+.SpotifySearchBar {
+  margin-top:10pt;
+  margin-bottom: 10pt;
 }
 
-.GenreHeader {
-
+.SpotifyWrongButton {
+  margin-bottom:10pt;
 }
 
-.GenreList {
-
+.SpotifyTracks {
+  margin-left:10pt;
+  margin-top:5pt;
 }
 
-.ArtistImage {
-
+.SpotifyTrack {
+  margin-top:5pt;
+  margin-bottom:15pt;
+  display:flex;
+  flex-direction: column;
 }
+

@@ -4,7 +4,6 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './components/Home';
-import Contact from './components/Contact';
 import Weather from './components/Weather';
 import Spotify from './components/Spotify';
 
@@ -17,7 +16,6 @@ function App() {
           <Routes>
               <Route path="/" element={<Layout></Layout>}>
                 <Route index element={<Home></Home>}></Route>
-                <Route path="contact" element={<Contact></Contact>}></Route>
                 <Route path="spotify" element={<Spotify></Spotify>}></Route>
               </Route>
           </Routes>
