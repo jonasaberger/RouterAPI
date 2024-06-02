@@ -3,12 +3,9 @@ import { Button } from "react-bootstrap";
 const Home = (props) => {
 
     const openGithub = () => {
-        return (event) => {
-            event.preventDefault();
-    
-            // Open the link in a new tab
-            window.open();
-        }
+        // Open the link in a new tab
+        window.open('https://github.com/jonasaberger/RouterAPI');
+
     }
 
     return (
