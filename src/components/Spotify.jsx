@@ -236,7 +236,7 @@ const fetchData = async () => {
         variant="light"
         className="SpotifyWrongButton"
         onClick={wrongButton}
-        disabled={outputData === null || refreshCounter >= 20 || checkedIndex == 2}
+        disabled={outputData === null || refreshCounter >= 20 || checkedIndex === 2}
       >
         Wrong One?
       </Button>

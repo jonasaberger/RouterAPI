@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import getLocation from "../services/getLocation";
 import getWeather from "../services/getWeather";
 import getWeatherIcon from "../services/getWeatherIcon";
 import Button from 'react-bootstrap/Button'
+
 
 
 const Weather = (props) => {
@@ -13,6 +14,9 @@ const Weather = (props) => {
 
     const api_key = "ff405c12ed1acb3a636d642065628df0";
 
+    useEffect(() => {
+        handleClick()
+    },[position, weatherData]);
 
     const handleClick = () => {
         getLocation()
@@ -22,11 +26,8 @@ const Weather = (props) => {
                 .then(data => {
                     if(data) {
                         // Success
-
                         // Update the Style
                         setUpdateContainer(true)
-                        
-
                         // Setting the Weather Data
                         setWeatherData(data)
                         
@@ -34,9 +35,6 @@ const Weather = (props) => {
                         .then (weatherIcon => {
                             setWeatherImage(weatherIcon.url)
                         })
-
-                        
-
                         console.log(data)
                     }
                     else {
